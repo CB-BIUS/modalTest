@@ -82,28 +82,24 @@ function Home() {
                             open={open}
                             onClose={handleClose}
                         >
-                            <div style={modalStyle} className={classes.paper}>
-                                {/* <h2 id="simple-modal-title">{selectedAlbum && selectedAlbum.last_name}</h2>
-                                <img src={selectedAlbum && selectedAlbum.image} alt="..." />
-                                <p id="simple-modal-description">
-                                {selectedAlbum && selectedAlbum.gender}
-                                </p>
-                                <p id="simple-modal-description">
-                                {selectedAlbum && selectedAlbum.ip_address}
-                                </p>
-                                <p id="simple-modal-description">
-                                {selectedAlbum && selectedAlbum.email}
-                                </p> */}
-                            <Grid container spacing={4}>
-                            <Grid item xs={12} sm={6} md={4}>
-                    <Card>
+                        <div style={modalStyle} className={classes.paper}>
+                                
+                        <Grid container spacing={4}>
+                            {card.images.map((sub, index) =>
+                        <Grid item key={index} xs={12} sm={6} md={4}>
+                        <Card>
                         <CardMedia style = {{ height: 0, paddingTop: '56%'}}
-                            image={selectedAlbum && selectedAlbum.image}
+                            image={sub.image}
                             title="Image title"
                         />
                         </Card>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                            {selectedAlbum && selectedAlbum.first_name}
+                            </Typography>
+                        </CardContent>    
                         </Grid>
-                        
+                        )}
                             </Grid>
 
                             </div>
